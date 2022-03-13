@@ -1,0 +1,60 @@
+README for package dialEye.
+Author: Olli Lammi <olammi@iki.fi>
+
+USAGE: 
+       python dialEye.py --help
+
+           Outputs help text
+        
+       python dialEye.py [<common options>] showconf
+       
+           Generates an image with the current calibration image on the background
+           with calibration information drawn into the image corresponding to 
+           the current configuration. Outputs the image to file dialeye_conf.png 
+           in current directory.
+           
+       python dialEye.py [<common options>] [-r] [-d] [-s] 
+                         [[-u] [--username <user> --password <pass>]] 
+                         meter <image_file or URL>
+       
+           Reads configuration file information, calibration image and <image_file>
+           file or URL given on the command line. Uses detection algorithm to determine
+           the reading of the configured rotary meter dials. Outputs the value to 
+           standard output most significant dial first. Example output with 
+           4 dials configured: 3474. On error or when not able to detect one or more
+           of the dials, returns "ERROR:" and description of the error on one row.
+           
+           Meter command options:
+           
+               -r  Outputs an image of the detected meters as a result image to 
+                   file dialeye_result.png in the current directory.
+
+               -d  The shaking is disabled and only the possible existing saved 
+                   shake configuration will be used (this is faster, but does 
+                   not follow possible camera movement).
+
+               -s  The calculated shake result will be saved in the configured 
+                   shake file.
+
+               -u  The image name given after meter keyword is considered to be an URL.
+				   If URL requires basic authentication, use options --username and 
+				   --password to provide authentication information.
+           
+        Common options:
+           
+           [-v] [-g] [-f <config_file>] [-c <calibration_image_file>]
+           
+           -v    Verbose output. Outputs debug information of the operations.
+           
+           -g    If -g option is given, will not write graphical output to 
+                 a result file. Instead opens the result image in new window.
+                 (requires a graphical environment)
+          
+           -f <config_file>
+                 Use <config_file> as dialEye config file. 
+                 (Default: use dialEye.conf in current directory)
+                 
+           -c <calibration_image_file>
+                 If defined, uses <calibration_image_file> as the calibration
+                 image. (Default: use calibration image defined in the configuration 
+                 file.)

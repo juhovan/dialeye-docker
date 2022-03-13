@@ -1,0 +1,39 @@
+CHANGELOG for package dialEye.
+Author: Olli Lammi <olammi@iki.fi>
+
+
+
+TODO:
+----- 
+*
+
+
+Version 1.0b, 05.03.2017
+------------------------
+* Added possibility to specify dial needle colors in configuration. 
+
+* Added option to output result value with decimal fraction 
+  (default output is rounded to integer).
+
+
+Version 1.0a, 21.12.2014
+------------------------
+* Small fixes to bug in rotation algorithm.
+
+* First public release version.
+
+ 
+Version 0.2a, 18.12.2014
+------------------------
+* Developed version with easier calibration procedure and faster
+  algorithm.
+  
+
+Version 0.1b, 30.01.2012
+------------------------
+* Corrected one possible error condition in meter shaking algorithm.
+
+
+Version 0.1a, 24.10.2011
+------------------------
+* First beta version developed from test proto.
