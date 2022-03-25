@@ -591,7 +591,7 @@ def GetImageURL(url, username = None, passwd = None):
     try:
         req = urllib.request.Request(url)
         if username != None and len(username) > 0:
-            req.add_header('Authorization', 'Basic ' + base64.b64encode(username + ':' + passwd))
+            req.add_header('Authorization', bytes('Basic ','utf-8') + base64.b64encode(bytes(username + ':' + passwd,'utf-8')))
         f = urllib.request.urlopen(req)
         res = f.read()
         f.close()
